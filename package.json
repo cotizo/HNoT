@@ -1,0 +1,9 @@
+{
+  "name": "HNoT",
+  "description": "A bot which tweets the top entries on Hacker News every hour",
+  "version": "0.0.1",
+  "dependencies": {
+    "redis": "~0.12.1",
+    "cheerio": "~0.18.0"
+  }
+}
