@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "redis": "~0.12.1",
-    "cheerio": "~0.18.0"
+    "cheerio": "~0.18.0",
+    "node-twitter": "~0.5.2"
   }
 }
