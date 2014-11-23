@@ -1,10 +1,12 @@
 var config = require('./config.json');
+var CronJob = require('cron').CronJob;
 
 var crawler = require('./crawler')(config)
   , twitter = require('./twitter')(config)
   , filter = require('./filter')(config);
 
 function execute(callback) {
+    console.log("Starting job at: " + new Date());
     crawler("https://news.ycombinator.com/", function (err, title, url) {
         if (err) { console.error("Crawler error: " + JSON.stringify(err)); return; }
         var tweet = title + ": " + url;
@@ -31,4 +33,4 @@ function execute(callback) {
     });
 }
 
-execute(function () { execute(); });
+var job = new CronJob(config["cron"], execute, true, "Europe/Zurich");

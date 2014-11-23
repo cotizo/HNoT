@@ -2,9 +2,14 @@
   "name": "HNoT",
   "description": "A bot which tweets the top entries on Hacker News every hour",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mihai-sima/HNoT.git"
+  },
   "dependencies": {
     "redis": "~0.12.1",
     "cheerio": "~0.18.0",
-    "node-twitter": "~0.5.2"
+    "node-twitter": "~0.5.2",
+    "cron": "~1.0.5"
   }
 }
