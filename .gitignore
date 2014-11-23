@@ -29,3 +29,6 @@ node_modules
 
 # HNoT confguration file
 config.json
+
+# webstorm folder
+.idea
