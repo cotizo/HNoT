@@ -6,14 +6,14 @@ var crawler = require('./crawler')(config)
 
 function execute(callback) {
     crawler("https://news.ycombinator.com/", function (err, title, url) {
-        if (err) { console.error(err); return; }
+        if (err) { console.error("Crawler error: " + JSON.stringify(err)); return; }
         var tweet = title + ": " + url;
         filter(tweet, function (err, isDifferent) {
-            if (err) { console.error(err); return; }
+            if (err) { console.error("Filter error: " + JSON.stringify(err)); return; }
             if (isDifferent) {
                 console.log("Posting: " + tweet);
                 twitter(title + ": " + url, function (err, data) {
-                    if (err) { console.error(err); return; }
+                    if (err) { console.error("Twitter error: " + JSON.stringify(err)); return; }
                     console.dir(data);
 
                     if (typeof callback === "function") {
